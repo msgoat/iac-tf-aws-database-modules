@@ -59,7 +59,7 @@ variable db_max_storage_size {
 variable postgresql_version {
   description = "PostgreSQL version"
   type = string
-  default = "13.2"
+  default = "13.6"
 }
 
 variable vpc_id {

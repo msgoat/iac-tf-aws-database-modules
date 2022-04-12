@@ -26,4 +26,5 @@ output db_user_name {
 output db_user_password {
   description = "Password of the DB master user"
   value = aws_db_instance.postgresql.password
+  sensitive = true
 }
