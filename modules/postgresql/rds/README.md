@@ -4,12 +4,13 @@ Provisions a PostgreSQL instance managed by AWS RDS.
 
 ## Default PostgreSQL instance configuration
 
-* Master user name is a random alphanumeric character sequence.
+* Master username is a random alphanumeric character sequence.
 * Master user password is a random character sequence with supported special characters.
-* Storage is encrypted using AWS managed keys.
+* Master user information is stored as a AWS SecretsManager secret.
+* PostgreSQL storage is encrypted using AWS KMS customer managed keys.
 
 ## TODO's
 
-| TODO | Status |
-| --- | --- | 
-| add support of customer master keys | open |
+| TODO | Status      |
+| --- |-------------| 
+| add support of customer master keys | pending |

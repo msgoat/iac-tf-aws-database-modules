@@ -18,13 +18,12 @@ output db_port_number {
   value = aws_db_instance.postgresql.port
 }
 
-output db_user_name {
-  description = "Name of the DB master user"
-  value = aws_db_instance.postgresql.username
+output db_secret_name {
+  description = "Name of the AWS SecretsManager secret holding username and password of the database admin user"
+  value = aws_secretsmanager_secret.postgres.name
 }
 
-output db_user_password {
-  description = "Password of the DB master user"
-  value = aws_db_instance.postgresql.password
-  sensitive = true
+output db_secret_id {
+  description = "Unique identifier of the AWS SecretsManager secret holding username and password of the database admin user"
+  value = aws_secretsmanager_secret.postgres.id
 }

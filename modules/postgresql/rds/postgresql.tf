@@ -6,7 +6,7 @@ locals {
 
 resource aws_db_instance postgresql {
   identifier = local.db_instance_name
-  name = var.db_database_name
+  db_name = var.db_database_name
   engine = "postgres"
   engine_version = var.postgresql_version
   allow_major_version_upgrade = false
@@ -27,6 +27,7 @@ resource aws_db_instance postgresql {
   iam_database_authentication_enabled = true
   db_subnet_group_name = aws_db_subnet_group.postgresql.name
   vpc_security_group_ids = [aws_security_group.postgresql.id]
+  kms_key_id = aws_kms_key.cmk.arn
   tags = merge({
     Name = local.db_instance_name
   }, local.module_common_tags)
