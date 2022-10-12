@@ -14,10 +14,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = var.region_name
-}
-
 # Local values used in this module
 locals {
   module_common_tags = var.common_tags
